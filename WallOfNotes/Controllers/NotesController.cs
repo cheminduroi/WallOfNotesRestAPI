@@ -38,7 +38,7 @@ namespace WallOfNotes.Controllers
             await _context.Notes.AddAsync(note);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetNote", new { id = note.Id }, note);
+            return CreatedAtAction(nameof(GetNotes), new { id = note.Id }, note);
         }
     }
 }

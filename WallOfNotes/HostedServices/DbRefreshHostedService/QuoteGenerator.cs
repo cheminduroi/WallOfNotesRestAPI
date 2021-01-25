@@ -13,7 +13,7 @@ namespace WallOfNotes.HostedServices.DbRefreshHostedService
         
         public static async Task<List<string>> fetchMessages(int NumMessages)
         {
-            var streamTask = s_client.GetStreamAsync($"https://api.quotable.io/quotes?limit={NumMessages}&maxLength=300");
+            var streamTask = s_client.GetStreamAsync($"https://api.quotable.io/quotes?limit={NumMessages}&maxLength=70");
             return (await JsonSerializer
                 .DeserializeAsync<Result>(await streamTask))
                 .Quotes
